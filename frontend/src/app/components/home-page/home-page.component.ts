@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Characters } from 'src/app/models/Characters';
+import { CharactersService } from 'src/app/services/characters.service';
 
 @Component({
   selector: 'app-home-page',
@@ -17,9 +18,10 @@ export class HomePageComponent implements OnInit {
     {id:"4444",name:"awsdww",description:"meu deus",thumbnail:"madsauxc"},
   ]
 
-  constructor() { }
+  constructor(private characterService:CharactersService) { }
 
   ngOnInit(): void {
+    console.log(this.characterService.getCharacters());
   }
 
   updateName(event: Event): void {
