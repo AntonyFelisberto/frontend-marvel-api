@@ -11,11 +11,11 @@ export class CharactersService {
   constructor(private httpClient: HttpClient) { }
 
   public getCharacterById(id:String):Observable<Characters>{
-    return this.httpClient.get<Characters>(`https://backend-marvel-api-9hny.vercel.app/${id}/${process.env['NG_APP_HELLO']}`)
+    return this.httpClient.get<Characters>(`https://backend-marvel-api-9hny.vercel.app/${id}/${process.env['PASSWORD_API']}`)
   }
 
   public getCharacters():Observable<Characters[]>{
-    return this.httpClient.get<Characters[]>(`https://backend-marvel-api-9hny.vercel.app/${process.env['NG_APP_HELLO']}`)
+    return this.httpClient.get<Characters[]>(`https://backend-marvel-api-9hny.vercel.app/${process.env['PASSWORD_API']}`)
   }
 
 }
