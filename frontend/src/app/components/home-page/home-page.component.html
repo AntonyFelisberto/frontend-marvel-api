@@ -1,3 +1,44 @@
-<header>
-    <a href="#"></a>
-</header>
+<div class="container">
+    <div class="row">
+        <div class="search-hero">
+            <input type="text" name="search" ngModel id="search" placeholder="Buscar por heroi"/>
+            <input [(ngModel)]="searchText" placeholder="Enter your name">
+        </div>
+    </div>
+    
+
+    <table>
+        <thead>
+            <tr>
+                <th>ark</th>
+                <th>www</th>
+                <th>countr</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let heroe of heroes">
+                <td>{{heroe.id}}</td>
+                <td>{{heroe.name}}</td>
+                <td>{{heroe.description}}</td>
+                <td>{{heroe.thumbnail}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{searchText}}
+<div id="body">
+    <div class="slide-container">
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="image-content">
+                        <span class="overlay"></span>
+                        <div class="card-image">
+                            <img src="http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" alt="" class="card-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
