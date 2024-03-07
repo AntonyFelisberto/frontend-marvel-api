@@ -1,32 +1,23 @@
-<div class="container">
-    <div class="row">
-        <div class="search-hero">
-            <input type="text" name="search" ngModel id="search" placeholder="Buscar por heroi"/>
-            <input [(ngModel)]="searchText" placeholder="Enter your name">
+<div id="bodySearch">
+    <div class="container">
+        <div class="entryarea">
+            <div class="search-hero">
+                <input [value]="searchText" (input)="updateName($event)" type="text">
+                <div class="labelline">Buscar por heroi</div>
+            </div>
         </div>
     </div>
-    
-
-    <table>
-        <thead>
-            <tr>
-                <th>ark</th>
-                <th>www</th>
-                <th>countr</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let heroe of heroes">
-                <td>{{heroe.id}}</td>
-                <td>{{heroe.name}}</td>
-                <td>{{heroe.description}}</td>
-                <td>{{heroe.thumbnail}}</td>
-            </tr>
-        </tbody>
-    </table>
 </div>
-{{searchText}}
-<div id="body">
+
+
+    <!--<tr *ngFor="let heroe of heroes | filter:searchText">
+        <td>{{heroe.id}}</td>
+        <td>{{heroe.name}}</td>
+        <td>{{heroe.description}}</td>
+        <td>{{heroe.thumbnail}}</td>
+    </tr>-->
+
+<div id="bodySlider">
     <div class="slide-container">
         <div class="slide-content">
             <div class="card-wrapper">

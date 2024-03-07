@@ -8,7 +8,7 @@ import { Characters } from 'src/app/models/Characters';
 })
 export class HomePageComponent implements OnInit {
 
-  searchText!:string;
+  searchText:string = "";
 
   heroes:Characters[] = [
     {id:"1111",name:"awsd",description:"anunasdb skhwos shdawwo",thumbnail:"aaaaaaaaaaaaaa"},
@@ -20,6 +20,10 @@ export class HomePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  updateName(event: Event): void {
+    this.searchText = (event.target as HTMLInputElement).value;
   }
 
 }
