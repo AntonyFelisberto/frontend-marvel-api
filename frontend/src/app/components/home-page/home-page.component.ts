@@ -11,14 +11,16 @@ export class HomePageComponent implements OnInit {
 
   searchText:string = "";
 
-  heroes:Characters[] = []
+  heroes!:Characters[];
 
   constructor(private characterService:CharactersService) { }
 
   ngOnInit(): void {
-    this.characterService.getCharacters().subscribe((characters:Characters[]) => {
-      this.heroes = characters
-    });
+    this.characterService.getCharacters().subscribe(
+      (characters:Characters[]) => {
+        this.heroes = characters
+      }
+    );
   }
 
   updateName(event: Event): void {

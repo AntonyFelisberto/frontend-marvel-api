@@ -9,11 +9,9 @@
     </div>
 </div>
 
-
-<tr *ngFor="let heroe of heroes | filter:searchText">
-    <td>{{heroe.id}}</td>
-    <td>{{heroe.name}}</td>
-    <td>{{heroe.description}}</td>
-    <td>{{heroe.thumbnail}}</td>
+<tr *ngFor="let hero of heroes | filter:searchText">
+    <td>{{hero.id}}</td>
+    <td>{{hero.name}}</td>
+    <td>{{hero.description}}</td>
+    <td>{{hero.thumbnail}}</td>
 </tr>
-    

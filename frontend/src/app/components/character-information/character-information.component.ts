@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Characters } from 'src/app/models/Characters';
+import { CharactersService } from 'src/app/services/characters.service';
 
 @Component({
   selector: 'app-character-information',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterInformationComponent implements OnInit {
 
-  constructor() { }
+  hero!:Characters
+
+  constructor(private characterService:CharactersService) { }
 
   ngOnInit(): void {
+    this.characterService.getCharacterById("1").subscribe((hero:Characters) => {
+      this.hero = hero
+    });
   }
 
 }
