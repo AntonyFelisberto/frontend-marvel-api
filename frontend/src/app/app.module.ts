@@ -28,4 +28,3 @@ import { InterceptorService } from './auth/interceptor.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
