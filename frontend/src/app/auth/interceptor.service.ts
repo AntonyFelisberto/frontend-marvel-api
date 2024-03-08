@@ -12,7 +12,7 @@ export class InterceptorService {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     request = request.clone({
       setHeaders: {
-        'Access-Control-Allow-Origin': 'https://frontend-marvel-inuuooo6u-antonyfelisberto.vercel.app'
+        'Access-Control-Allow-Origin': 'https://backend-marvel-api-9hny.vercel.app'
       }
     });
     return next.handle(request);
