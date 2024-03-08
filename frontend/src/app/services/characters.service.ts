@@ -16,7 +16,7 @@ export class CharactersService {
   }
 
   public getCharacters():Observable<Characters[]>{
-    return this.httpClient.get<Characters[]>(`https://backend-marvel-api-9hny.vercel.app/marvel-api/${environment.api}}`)
+    return this.httpClient.get<Characters[]>(`https://backend-marvel-api-9hny.vercel.app/marvel-api/${environment.api}`)
   }
 
 }
