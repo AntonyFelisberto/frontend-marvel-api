@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit {
   constructor(private characterService:CharactersService) { }
 
   ngOnInit(): void {
-    console.log(this.characterService.getCharacters());
+    //console.log(this.characterService.getCharacters());
   }
 
   updateName(event: Event): void {
