@@ -11,21 +11,17 @@ export class HomePageComponent implements OnInit {
 
   searchText:string = "";
 
-  heroes:Characters[] = [
-    {id:"1111",name:"awsd",description:"anunasdb skhwos shdawwo",thumbnail:"aaaaaaaaaaaaaa"},
-    {id:"1222",name:"wasdww",description:"loremmmmmmmm",thumbnail:"dddddddddddddd"},
-    {id:"3333",name:"arkham",description:"sekiro",thumbnail:"orkraimc"},
-    {id:"4444",name:"awsdww",description:"meu deus",thumbnail:"madsauxc"},
-  ]
+  heroes:Characters[] = []
 
   constructor(private characterService:CharactersService) { }
 
   ngOnInit(): void {
-    //console.log(this.characterService.getCharacters());
+    this.characterService.getCharacters().subscribe((characters:Characters[]) => {
+      this.heroes = characters
+    });
   }
 
   updateName(event: Event): void {
     this.searchText = (event.target as HTMLInputElement).value;
   }
-
 }
