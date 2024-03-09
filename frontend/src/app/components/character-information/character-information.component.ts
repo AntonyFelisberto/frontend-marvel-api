@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Characters } from 'src/app/models/Characters';
 import { CharactersService } from 'src/app/services/characters.service';
 
@@ -11,12 +12,15 @@ export class CharacterInformationComponent implements OnInit {
 
   hero!:Characters
 
-  constructor(private characterService:CharactersService) { }
+  constructor(private characterService:CharactersService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.characterService.getCharacterById("1").subscribe((hero:Characters) => {
-      this.hero = hero
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    if(id){
+      this.characterService.getCharacterById(id).subscribe((hero:Characters) => {
+        this.hero = hero
+      });
+    }
   }
 
 }

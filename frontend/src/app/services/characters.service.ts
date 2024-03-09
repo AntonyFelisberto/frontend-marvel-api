@@ -12,18 +12,19 @@ export class CharactersService {
 
   constructor(private httpClient: HttpClient) { }
   
-  public getCharacterById(id:String):Observable<Characters>{
-    return this.httpClient.get<Characters>(`https://backend-marvel-api-9hny.vercel.app/marvel-api/${id}/${environment.api}`).pipe(
+  public getCharacterById(id: string): Observable<Characters> {
+    return this.httpClient.get<{ result: Characters[] }>(`https://backend-marvel-api-9hny.vercel.app/marvel-api/${id}/${environment.api}`).pipe(
       map(response => {
+        const result = response.result[0];
         const character: Characters = {
-          id: response.id,
-          name: response.name,
-          description: response.description,
-          thumbnail: response.thumbnail,
-          comics:response.comics,
-          series:response.series,
-          stories:response.stories,
-          events:response.events
+          id: result.id,
+          name: result.name,
+          description: result.description,
+          thumbnail: result.thumbnail,
+          comics: result.comics,
+          series: result.series,
+          stories: result.stories,
+          events: result.events
         };
         return character;
       })

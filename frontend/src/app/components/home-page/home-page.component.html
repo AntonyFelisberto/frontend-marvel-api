@@ -9,9 +9,19 @@
     </div>
 </div>
 
-<tr *ngFor="let hero of heroes | filter:searchText">
-    <td>{{hero.id}}</td>
-    <td>{{hero.name}}</td>
-    <td>{{hero.description}}</td>
-    <td>{{hero.thumbnail}}</td>
-</tr>
+<div id="bodySlider">
+    <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul  #carouselRef class="carousel">
+            <li class="card" *ngFor="let hero of heroes | filter:searchText">
+                <div class="img">          
+                    <img draggable="false" src="{{hero.thumbnail}}" alt="{{hero.name}}">
+                </div>
+                <h2>{{hero.name}}</h2>
+                <span>{{hero.comics}}</span>
+                <button [routerLink]="'/character/' + hero.id">SABER MAIS</button>
+            </li>
+        </ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+</div>
