@@ -46,3 +46,9 @@ p {
 img{
     top: 0;
 }
+
+
+a{
+    color: rgb(170, 219, 238);
+    text-decoration: none;
+}
