@@ -10,7 +10,7 @@
     <div class="main">
 
         <div *ngIf="hero.comics && hero.comics.length > 0">
-            <h2>QUADRINHOS</h2>
+            <h2>COMICS</h2>
             <div class="cards" *ngFor="let comics of hero.comics">
                 <div class="image">
                     <img [src]="searchImages(comics.name)" alt="{{comics.name}}">
@@ -34,7 +34,7 @@
         </div>
 
         <div *ngIf="hero.stories && hero.stories.length > 0">
-            <h2>HISTÓRIAS</h2>
+            <h2>STORIES</h2>
             <div class="cards" *ngFor="let stories of hero.stories">
                 <div class="image">
                     <img [src]="searchImages(stories.name)" alt="{{stories.name}}">
@@ -46,7 +46,7 @@
         </div>
 
         <div *ngIf="hero.events && hero.events.length > 0">
-            <h2>EVENTOS</h2>
+            <h2>EVENTS</h2>
             <div class="cards" *ngFor="let events of hero.events">
                 <div class="image">
                     <img [src]="searchImages(events.name)" alt="{{events.name}}">
