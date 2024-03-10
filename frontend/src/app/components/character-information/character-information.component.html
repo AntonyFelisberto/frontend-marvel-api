@@ -9,7 +9,7 @@
 
     <div class="main">
 
-        <div *ngIf="hero.comics">
+        <div *ngIf="hero.comics && hero.comics.length > 0">
             <h2>QUADRINHOS</h2>
             <div class="cards" *ngFor="let comics of hero.comics">
                 <div class="image">
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div *ngIf="hero.series">
+        <div *ngIf="hero.series && hero.series.length > 0">
             <h2>SERIES</h2>
             <div class="cards" *ngFor="let series of hero.series">
                 <div class="image">
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div *ngIf="hero.stories">
+        <div *ngIf="hero.stories && hero.stories.length > 0">
             <h2>HISTÓRIAS</h2>
             <div class="cards" *ngFor="let stories of hero.stories">
                 <div class="image">
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <div *ngIf="hero.stories && hero.stories !== []">
+        <div *ngIf="hero.events && hero.events.length > 0">
             <h2>EVENTOS</h2>
             <div class="cards" *ngFor="let events of hero.events">
                 <div class="image">
