@@ -25,6 +25,8 @@ h1:hover {
 }
 
 p {
+    inline-size: 500px;
+    overflow-wrap: break-word;
     font-size: 1.2em;
     text-align: center;
     color: rgb(170, 219, 238);
