@@ -1,2 +1,7 @@
-<p>character-information works!</p>
-<p>{{hero.name}}</p>
+
+<div class="container">
+    <h1>{{hero.name}}</h1>
+    <img src="{{hero.thumbnail}}" alt="{{hero.name}}" id="imagem">
+    <p *ngIf="hero.description">{{hero.description}}</p>
+    <p *ngIf="!hero.description">Sem descrições encontradas</p>
+</div>
