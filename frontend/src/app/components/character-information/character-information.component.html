@@ -21,19 +21,6 @@
             </div>
         </div>
 
-        <div *ngIf="hero.comics">
-            <h2>SERIES</h2>
-            <div class="cards" *ngFor="let series of hero.series">
-                <div class="image">
-                    <img [src]="searchImages(series.name)" alt="{{series.name}}">
-                </div>
-                <div class="des">
-                    <h3>{{series.name}}</h3>
-                </div>
-            </div>
-        </div>
-
-
         <div *ngIf="hero.series">
             <h2>SERIES</h2>
             <div class="cards" *ngFor="let series of hero.series">
@@ -42,18 +29,6 @@
                 </div>
                 <div class="des">
                     <h3>{{series.name}}</h3>
-                </div>
-            </div>
-        </div>
-
-        <div *ngIf="hero.stories">
-            <h2>HISTÓRIAS</h2>
-            <div class="cards" *ngFor="let stories of hero.stories">
-                <div class="image">
-                    <img [src]="searchImages(stories.name)" alt="{{stories.name}}">
-                </div>
-                <div class="des">
-                    <h3>{{stories.name}}</h3>
                 </div>
             </div>
         </div>
