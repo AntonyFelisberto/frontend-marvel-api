@@ -12,6 +12,15 @@ export class CharactersService {
 
   constructor(private httpClient: HttpClient) { }
   
+  searchImages(query: string): Observable<any> {
+    const url = `https://www.googleapis.com/customsearch/v1?q=${query}&cx=${environment.cx}&searchType=image&key=${environment.googleApi}&num=1`;
+    return this.httpClient.get<any>(url).pipe(
+      map(result => {
+        return result.items[0].link
+      })
+    );
+  }
+
   public getCharacterById(id: string): Observable<Characters> {
     return this.httpClient.get<{ result: Characters[] }>(`https://backend-marvel-api-9hny.vercel.app/marvel-api/${id}/${environment.api}`).pipe(
       map(response => {

@@ -14,6 +14,16 @@ export class CharacterInformationComponent implements OnInit {
 
   constructor(private characterService:CharactersService,private route: ActivatedRoute) { }
 
+  searchImages(query: string): string {
+    let imageLink = "../../../assets/marvel.jpg";
+    this.characterService.searchImages(query).subscribe(
+      data => {
+        imageLink = data;
+      }
+    );
+    return imageLink
+  }
+
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if(id){

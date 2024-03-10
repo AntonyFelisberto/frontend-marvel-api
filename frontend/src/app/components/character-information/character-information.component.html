@@ -3,7 +3,33 @@
     <h1><a href="" class="logo">{{hero.name}}</a></h1>
     <img src="{{hero.thumbnail}}" alt="{{hero.name}}" id="imagem">
 
+    
     <p *ngIf="hero.description">{{hero.description}}</p>
     <p *ngIf="!hero.description">Sem descrições encontradas</p>
+
+    COMICS
+    <p *ngFor="let comics of hero.comics">
+        {{comics.name}}
+        <img [src]="searchImages(comics.name)" alt="{{comics.name}}">
+    </p>
+
+    SERIES
+    <p *ngFor="let series of hero.series">
+        {{series.name}}
+        <img [src]="searchImages(series.name)" alt="{{series.name}}">
+    </p>
+
+    HISTORIAS
+    <p *ngFor="let stories of hero.stories">
+        
+        {{stories.name}}
+        <img [src]="searchImages(stories.name)" alt="{{stories.name}}">
+    </p>
+
+    EVENTOS
+    <p *ngFor="let events of hero.events">
+        {{events.name}}
+        <img  [src]="searchImages(events.name)" alt="{{events.name}}">
+    </p>
 
 </div>

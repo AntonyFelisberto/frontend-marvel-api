@@ -3,8 +3,8 @@ export interface Characters {
     name:string,
     description:string,
     thumbnail:string,
-    comics?:[],
-    series?:[],
-    stories?:[],
-    events?:[]
+    comics?: { resourceURI: string; name: string }[];
+    series?: { resourceURI: string; name: string }[];
+    stories?: { resourceURI: string; name: string }[];
+    events?: { resourceURI: string; name: string }[];
 }
