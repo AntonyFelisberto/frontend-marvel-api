@@ -7,29 +7,80 @@
     <p *ngIf="hero.description">{{hero.description}}</p>
     <p *ngIf="!hero.description">Sem descrições encontradas</p>
 
-    COMICS
-    <p *ngFor="let comics of hero.comics">
-        {{comics.name}}
-        <img [src]="searchImages(comics.name)" alt="{{comics.name}}">
-    </p>
+    <div class="main">
 
-    SERIES
-    <p *ngFor="let series of hero.series">
-        {{series.name}}
-        <img [src]="searchImages(series.name)" alt="{{series.name}}">
-    </p>
+        <div *ngIf="hero.comics">
+            <h2>QUADRINHOS</h2>
+            <div class="cards" *ngFor="let comics of hero.comics">
+                <div class="image">
+                    <img [src]="searchImages(comics.name)" alt="{{comics.name}}">
+                </div>
+                <div class="des">
+                    <h3>{{comics.name}}</h3>
+                </div>
+            </div>
+        </div>
 
-    HISTORIAS
-    <p *ngFor="let stories of hero.stories">
-        
-        {{stories.name}}
-        <img [src]="searchImages(stories.name)" alt="{{stories.name}}">
-    </p>
+        <div *ngIf="hero.comics">
+            <h2>SERIES</h2>
+            <div class="cards" *ngFor="let series of hero.series">
+                <div class="image">
+                    <img [src]="searchImages(series.name)" alt="{{series.name}}">
+                </div>
+                <div class="des">
+                    <h3>{{series.name}}</h3>
+                </div>
+            </div>
+        </div>
 
-    EVENTOS
-    <p *ngFor="let events of hero.events">
-        {{events.name}}
-        <img  [src]="searchImages(events.name)" alt="{{events.name}}">
-    </p>
 
+        <div *ngIf="hero.series">
+            <h2>SERIES</h2>
+            <div class="cards" *ngFor="let series of hero.series">
+                <div class="image">
+                    <img [src]="searchImages(series.name)" alt="{{series.name}}">
+                </div>
+                <div class="des">
+                    <h3>{{series.name}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="hero.stories">
+            <h2>HISTÓRIAS</h2>
+            <div class="cards" *ngFor="let stories of hero.stories">
+                <div class="image">
+                    <img [src]="searchImages(stories.name)" alt="{{stories.name}}">
+                </div>
+                <div class="des">
+                    <h3>{{stories.name}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="hero.stories">
+            <h2>HISTÓRIAS</h2>
+            <div class="cards" *ngFor="let stories of hero.stories">
+                <div class="image">
+                    <img [src]="searchImages(stories.name)" alt="{{stories.name}}">
+                </div>
+                <div class="des">
+                    <h3>{{stories.name}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="hero.stories && hero.stories !== []">
+            <h2>EVENTOS</h2>
+            <div class="cards" *ngFor="let events of hero.events">
+                <div class="image">
+                    <img [src]="searchImages(events.name)" alt="{{events.name}}">
+                </div>
+                <div class="des">
+                    <h3>{{events.name}}</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
