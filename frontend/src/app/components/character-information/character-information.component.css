@@ -30,6 +30,23 @@
     }
 }
 
+@media screen and (max-width: 640px) {
+    .cards {
+        width: 20%;
+        display: inline-block;
+        background-color: gray;
+        border-radius: 5px;
+        margin: 40px;
+        box-shadow: 2px 2px 10px black;
+    }
+
+    h3 {
+        font-size: 0.90rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 5px;
+    }
+}
 
 @media screen and (max-width: 640px) {
     .cards {
@@ -49,7 +66,7 @@
     }
 }
 
-@media screen and (max-width: 582px) {
+@media screen and (max-width: 574px) {
     .cards {
         width: 20%;
         display: inline-block;
@@ -60,15 +77,29 @@
     }
 
     h3 {
-        font-size: 0.60rem;
+        font-size: 0.80rem;
         margin-top: 30px;
         margin-bottom: 30px;
         padding: 5px;
+        outline: none;
     }
 
     #sizeLetter {
         font-size: 0.70rem;
         inline-size: 200px;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-family: 'Gambetta', serif;
+        letter-spacing: -3px;
+        transition: 700ms ease;
+        font-variation-settings: "wght" 311;
+        margin-bottom: 0.8rem;
+        color: rgb(170, 219, 238);
+        outline: none;
+        text-align: center;
     }
 }
 
