@@ -4,8 +4,8 @@
     <img src="{{hero.thumbnail}}" alt="{{hero.name}}" id="imagem">
 
     
-    <p *ngIf="hero.description">{{hero.description}}</p>
-    <p *ngIf="!hero.description">Sem descrições encontradas</p>
+    <p *ngIf="hero.description" id="sizeLetter">{{hero.description}}</p>
+    <p *ngIf="!hero.description" id="sizeLetter">Sem descrições encontradas</p>
 
     <div class="main">
 
