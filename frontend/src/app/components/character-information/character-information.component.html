@@ -7,55 +7,10 @@
     <p *ngIf="hero.description" id="sizeLetter">{{hero.description}}</p>
     <p *ngIf="!hero.description" id="sizeLetter">Sem descrições encontradas</p>
 
-    <div class="main">
-
-        <div *ngIf="hero.comics && hero.comics.length > 0">
-            <h2>COMICS</h2>
-            <div class="cards" *ngFor="let comics of hero.comics">
-                <div class="image">
-                    <img src="../../../assets/marvel.jpg" alt="{{comics.name}}">
-                </div>
-                <div class="des">
-                    <h3 class="sizeInformation">{{comics.name}}</h3>
-                </div>
-            </div>
-        </div>
-
-        <div *ngIf="hero.series && hero.series.length > 0">
-            <h2>SERIES</h2>
-            <div class="cards" *ngFor="let series of hero.series">
-                <div class="image">
-                    <img src="../../../assets/marvel.jpg" alt="{{series.name}}">
-                </div>
-                <div class="des">
-                    <h3 class="sizeInformation">{{series.name}}</h3>
-                </div>
-            </div>
-        </div>
-
-        <div *ngIf="hero.stories && hero.stories.length > 0">
-            <h2>STORIES</h2>
-            <div class="cards" *ngFor="let stories of hero.stories">
-                <div class="image">
-                    <img src="../../../assets/marvel.jpg" alt="{{stories.name}}">
-                </div>
-                <div class="des">
-                    <h3 class="sizeInformation">{{stories.name}}</h3>
-                </div>
-            </div>
-        </div>
-
-        <div *ngIf="hero.events && hero.events.length > 0">
-            <h2>EVENTS</h2>
-            <div class="cards" *ngFor="let events of hero.events">
-                <div class="image">
-                    <img src="../../../assets/marvel.jpg" alt="{{events.name}}">
-                </div>
-                <div class="des">
-                    <h3 class="sizeInformation">{{events.name}}</h3>
-                </div>
-            </div>
-        </div>
-
+    <div>
+        <app-character-card [title]="'COMICS'" [card]="hero.comics ? hero.comics:[]"></app-character-card>
+        <app-character-card [title]="'SERIES'" [card]="hero.series ? hero.series:[]"></app-character-card>
+        <app-character-card [title]="'STORIES'" [card]="hero.stories ? hero.stories:[]"></app-character-card>
+        <app-character-card [title]="'EVENTS'" [card]="hero.events ? hero.events:[]"></app-character-card>
     </div>
 </div>

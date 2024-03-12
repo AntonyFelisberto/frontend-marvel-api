@@ -8,6 +8,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { CharacterInformationComponent } from './components/character-information/character-information.component';
 import { FilterPipe } from './filters/filter-pipe.pipe';
 import { InterceptorService } from './auth/interceptor.service';
+import { CharacterCardComponent } from './components/character-card/character-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { InterceptorService } from './auth/interceptor.service';
     MenuBarComponent,
     HomePageComponent,
     CharacterInformationComponent,
-    FilterPipe
+    FilterPipe,
+    CharacterCardComponent
   ],
   imports: [
     BrowserModule,
